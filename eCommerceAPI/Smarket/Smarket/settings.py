@@ -77,8 +77,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Smarket',
-        'USER': 'root',
-        'PASSWORD': 'admin',
+        'USER': 'django',
+        'PASSWORD': 'passw0rd',
         'HOST': 'localhost',
         'PORT': '3306'
     }
