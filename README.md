@@ -4,4 +4,3 @@
 
 # The Relational Schema:
 ![Screenshot from 2023-03-28 05-54-37](https://user-images.githubusercontent.com/96814665/228124583-46ca55a8-d9bc-4b45-bbe5-d66026ee9eb0.png)
-
