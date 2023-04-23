@@ -1,0 +1,39 @@
+{% extends 'market/base.html'  %}
+{% comment %} {% include   %} {% endcomment %}
+{% block title_block  %}
+   <h1>All Users </h1>
+   <p>Here's the Students' Information Page </p>
+{% endblock  %}
+{% block main_block  %}
+
+
+   <table class="table table-dark">
+      
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+      <th>Track </th>
+      <th>City</th>
+      <th>Graduated?</th>
+      <th colspan='2'> Actions </th>
+      
+      {% for u in users %} 
+      <tr>
+         <td><a href=/iot/student/{{st.id}}>{{st.fname}}</a></td>
+         <td>{{st.lname}}</td>
+         <td>{{st.age}}</td>
+         <td>{{st.studentsTrack}}</td>
+         <td>{{st.city}}</td>
+         <td>{{st.is_graduated}}</td>
+         <td><a href='/iot/edit/{{st.id}}'>Edit</a></td>
+         <td><a href='/iot/delete/{{st.id}}'>Delete</a></td>
+      </tr>
+      {% endfor %}
+      
+   </table>
+   
+   
+   <br>
+   <br>
+   <br>
+{% endblock  %}

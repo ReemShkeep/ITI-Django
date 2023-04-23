@@ -17,11 +17,11 @@ class Order(models.Model):
          return self.order_date       
 
 
-class category(models.Model):
+class Category(models.Model):
     CategoryName = models.CharField(max_length=30)
     description = models.CharField(max_length=200)
     def __str__(self):
-        return self.name
+        return self.CategoryName
   
     
 class Product(models.Model):
@@ -35,7 +35,7 @@ class Product(models.Model):
       orderNumber=models.ForeignKey('Order',on_delete=models.CASCADE,related_name='product_orders',blank=True)
       #product_orders= models.ManyToManyField('Order',related_name='product_orders',blank=True)
       def __str__(self):
-         return self.name
+         return self.productName
              
 
 class User(models.Model):
@@ -43,6 +43,7 @@ class User(models.Model):
     fname = models.CharField(max_length=30,null=True,default='None')
     lname = models.CharField(max_length=30,null=True,default='None')
     age= models.IntegerField(null=True,default='None')
+    city = models.CharField(max_length=200, null=True, default='New Capital')      
     password = models.CharField(max_length=30)
     email = models.CharField(max_length=30)
     phone = models.CharField(max_length=30)
@@ -51,7 +52,18 @@ class User(models.Model):
     is_active = models.BooleanField(default=True)
    #  user_orders=models.ForeignKey('Order',on_delete=models.CASCADE,related_name='user_orders',blank=True
    #  user_orders= models.ManyToManyField('Order',related_name='user_orders',blank=True)  
+
     def __str__(self):
-        return self.username
-         
-        return self.name     
+        return self.fname+' '+self.lname
+
+    def adult(self):
+      if self.age>18:
+         return True
+      else:
+         return False
+
+    adult.short_description = 'Adult?'
+    adult.boolean = True 
+    
+      
+  

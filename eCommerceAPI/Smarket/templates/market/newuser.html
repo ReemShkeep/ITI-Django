@@ -1,0 +1,34 @@
+{% extends 'market/base.html' %}
+{% load static %}
+{% block title_block  %}
+<h1>Welcome  </h1>
+<img src="{% static 'wel.png' %}" alt="welcome cat " width="200" height="200">
+{% endblock  %}
+
+{% block content_block  %}
+<p>Add New user here </p>
+<a href='/iot/allstu'> <img src="https://cdn-icons-png.flaticon.com/512/0/340.png" alt="Student Image" width="20" height="20"></a>
+{% endblock  %}
+
+
+
+{% block main_block  %}
+
+<form method="POST">
+   {% csrf_token %}
+   {{st_form.as_p}}
+   
+   <button type="submit" value="Back to Home" class='btn btn-success'>Save </button>
+   <button type="reset" value="Back to Home" class='btn btn-danger'>clear</button>
+</form>
+<br>
+<br>
+
+{% endblock  %}
+
+{% comment %} <form action="/iot/allstu" method="POST"> {% endcomment %}
+
+
+{% block footer_block  %}
+<p>Thanks for visiting</p>
+{% endblock  %}
