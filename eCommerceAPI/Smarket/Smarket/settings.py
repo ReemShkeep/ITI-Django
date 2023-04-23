@@ -33,6 +33,9 @@ ALLOWED_HOSTS = ['0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'django_filters',
     'market',
     'django.contrib.admin',
     'django.contrib.auth',
